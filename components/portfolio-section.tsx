@@ -36,7 +36,7 @@ export function PortfolioSection() {
       category: "web",
       description: "架空のアニメの公式サイト。近未来の日本。人口減少とAIによる自治が進む地方の町。そこには古来から続く奇祭「未来祀り」が残されており、町の未来を選ぶ儀式とされている。",
       image: "/ComfyUI_00005__修正版_1.png",
-      technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
+      technologies: ["React", "TypeScript",  "Tailwind CSS"],
       demoUrl: "https://festival-of-tomorrow.vercel.app/",
       githubUrl: "https://github.com/UonomeUota/Festival-of-Tomorrow",
     },
