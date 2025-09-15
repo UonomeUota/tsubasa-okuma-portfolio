@@ -26,7 +26,7 @@ export function PortfolioSection() {
       category: "web",
       description: "短文を各人が紡いでいき一つの小説となるようなSNS",
       image: "/noberu-logo-新.png",
-      technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
       demoUrl: "https://noberu-sns.vercel.app/",
       githubUrl: "https://github.com/UonomeUota/noberu-sns",
     },
