@@ -17,8 +17,8 @@ export function PortfolioSection() {
       description: "現在ご覧いただいているサイト。レスポンシブデザイン、アニメーション実装。",
       image: "/portfolio-website-design.webp",
       technologies: ["Next.js", "Tailwind CSS", "TypeScript"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://tsubasa-okuma-portfolio.vercel.app/",
+      githubUrl: "https://github.com/UonomeUota/tsubasa-okuma-portfolio",
     },
     {
       id: 2,
@@ -27,8 +27,8 @@ export function PortfolioSection() {
       description: "短文を各人が紡いでいき一つの小説となるようなSNS",
       image: "/noberu-logo-新.png",
       technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://noberu-sns.vercel.app/",
+      githubUrl: "https://github.com/UonomeUota/noberu-sns",
     },
     {
       id: 3,
@@ -37,12 +37,12 @@ export function PortfolioSection() {
       description: "架空のアニメの公式サイト。近未来の日本。人口減少とAIによる自治が進む地方の町。そこには古来から続く奇祭「未来祀り」が残されており、町の未来を選ぶ儀式とされている。",
       image: "/ComfyUI_00005__修正版_1.png",
       technologies: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://festival-of-tomorrow.vercel.app/",
+      githubUrl: "https://github.com/UonomeUota/Festival-of-Tomorrow",
     },
     {
       id: 4,
-      title: "建築ビジュアライゼーション",
+      title: "建築ビジュアライゼーション※現在修正中です。",
       category: "3d",
       description: "BlenderとFusion 360で制作した建築物の3Dモデル。リアルなライティングとマテリアル。",
       image: "/architectural-visualization.png",
@@ -57,8 +57,7 @@ export function PortfolioSection() {
       description: "BlenderとUnreal Engine5を用いて制作したアニメーション映画のティザー映像",
       image: "/ASYMMETRY　ポスター のコピー.webp",
       technologies: ["Blender", "Fusion 360", "Photoshop",],
-      demoUrl: "#",
-      githubUrl: "#",
+      demoUrl: "https://youtu.be/wSsrHT7VnbY",
     },
   ]
 
@@ -132,15 +131,17 @@ export function PortfolioSection() {
                   <Button size="sm" className="flex-1" asChild>
                     <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4 mr-2" />
-                      デモ
+                      見る
                     </a>
                   </Button>
-                  <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      コード
-                    </a>
-                  </Button>
+                  {project.category === "web" && (
+                    <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" />
+                        コード
+                      </a>
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
