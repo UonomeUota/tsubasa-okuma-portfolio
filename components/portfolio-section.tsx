@@ -71,7 +71,7 @@ export function PortfolioSection() {
     selectedCategory === "all" ? projects : projects.filter((project) => project.category === selectedCategory)
 
   return (
-    <section id="portfolio" className="py-20 bg-muted/30">
+    <section id="portfolio" className="py-20 bg-muted/30 scroll-mt-24 md:scroll-mt-0">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">作品集</h2>

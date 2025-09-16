@@ -70,7 +70,7 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
       <canvas
         ref={canvasRef}
         className="absolute inset-0 w-full h-full"
