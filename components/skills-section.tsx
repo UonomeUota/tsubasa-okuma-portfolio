@@ -46,7 +46,7 @@ export function SkillsSection() {
                     <span className="font-medium">{skill.name}</span>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2" />
+                  <Progress value={skill.level} className="h-2" indicatorClassName="!bg-[#D5545D]" />
                   <p className="text-xs text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
@@ -68,7 +68,7 @@ export function SkillsSection() {
                     <span className="font-medium">{skill.name}</span>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2" />
+                  <Progress value={skill.level} className="h-2" indicatorClassName="!bg-[#D5545D]" />
                   <p className="text-xs text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
