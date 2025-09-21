@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
 import { Analytics } from "@vercel/analytics/next"
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Suspense } from "react"
 import Script from "next/script"
 import AnimatedBackground from "@/components/animated-background"
@@ -16,30 +17,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="ja">
-      <head>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-9B8VJ47XN7"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-9B8VJ47XN7');
-          `}
-        </Script>
-      </head>
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <AnimatedBackground />
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
-      </body>
+      <body>{children}</body>
+      {process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID && (
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID} />
+      )}
     </html>
-  )
+  );
 }
