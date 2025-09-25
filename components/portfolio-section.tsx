@@ -59,12 +59,23 @@ export function PortfolioSection() {
       technologies: ["Blender", "Fusion 360", "Photoshop",],
       demoUrl: "https://youtu.be/wSsrHT7VnbY",
     },
+    {
+      id: 6,
+      title: "Kuwahara Filter for DaVinci Resolve",
+      category: "Plugin Development",
+      description: "DaVinci Resolve用のカスタムFuse実装による桑原フィルター。動画や画像に油絵風のアート効果を適用します。",
+      image: "/placeholder.svg",
+      technologies: ["Lua", "DaVinci Resolve", "Fusion", "Fuse"],
+      demoUrl: "https://github.com/UonomeUota/KuwaharaFilterForDavinciResolve",
+      githubUrl: "https://github.com/UonomeUota/KuwaharaFilterForDavinciResolve",
+    },
   ]
 
   const categories = [
     { id: "all", label: "すべて" },
     { id: "web", label: "Webアプリ" },
     { id: "3d", label: "3DCG作品" },
+    { id: "Plugin Development", label: "プラグイン製作" },
   ]
 
   const filteredProjects =
@@ -75,7 +86,7 @@ export function PortfolioSection() {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">作品集</h2>
-          <p className="text-muted-foreground text-lg text-pretty">これまでに制作したWebアプリケーションと3DCG作品</p>
+          <p className="text-muted-foreground text-lg text-pretty">これまでに制作したWebアプリケーション、3DCG作品、プラグイン</p>
         </div>
 
         {/* カテゴリフィルター */}
@@ -110,8 +121,8 @@ export function PortfolioSection() {
               <CardHeader>
                 <CardTitle className="flex items-center justify-between">
                   <span>{project.title}</span>
-                  <Badge variant={project.category === "web" ? "default" : "secondary"}>
-                    {project.category === "web" ? "Web" : "3DCG"}
+                  <Badge variant={project.category === "web" ? "default" : project.category === "video" ? "destructive" : project.category === "Plugin Development" ? "outline" : "secondary"}>
+                    {project.category === "web" ? "Web" : project.category === "video" ? "映像" : project.category === "Plugin Development" ? "プラグイン" : "3DCG"}
                   </Badge>
                 </CardTitle>
               </CardHeader>
@@ -134,7 +145,7 @@ export function PortfolioSection() {
                       見る
                     </a>
                   </Button>
-                  {project.category === "web" && (
+                  {(project.category === "web" || project.category === "video" || project.category === "Plugin Development") && (
                     <Button size="sm" variant="outline" className="flex-1 bg-transparent" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
