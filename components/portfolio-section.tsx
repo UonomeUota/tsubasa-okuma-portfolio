@@ -69,6 +69,24 @@ export function PortfolioSection() {
       demoUrl: "https://github.com/UonomeUota/KuwaharaFilterForDavinciResolve",
       githubUrl: "https://github.com/UonomeUota/KuwaharaFilterForDavinciResolve",
     },
+    {
+      id: 7,
+      title: "medical-access-risk-map",
+      category: "web",
+      description: "医療ハザードマップ。マップ上に医療機関が配置されており、その医療機関への到達時間を可視化します。",
+      image: "/placeholder.svg",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      demoUrl: "https://v0-medical-access-risk-map.vercel.app/",
+    },
+    {
+      id: 7,
+      title: "licaria",
+      category: "web",
+      description: "原作者と二次利用者をライセンスで繋ぐプラットフォーム。",
+      image: "/placeholder.svg",
+      technologies: ["React", "TypeScript", "Tailwind CSS"],
+      demoUrl: "https://v0-licaria.vercel.app/",
+    },
   ]
 
   const categories = [
