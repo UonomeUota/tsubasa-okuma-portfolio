@@ -6,7 +6,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: "ポートフォリオ | IT エンジニア",
-  description: "React, Next.js, Three.js を学習中のITエンジニアのポートフォリオサイト",
+  description: "React, Next.js, Three.jsを学習中のITエンジニアのポートフォリオサイト",
   generator: "v0.app",
 }
 

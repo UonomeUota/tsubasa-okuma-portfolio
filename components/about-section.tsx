@@ -88,7 +88,7 @@ export function AboutSection() {
                   <div className="p-4 bg-card rounded-lg border">
                     <h4 className="font-medium text-secondary mb-2">問題解決能力</h4>
                     <p className="text-sm text-muted-foreground">
-                      複雑な課題に対して論理的にアプローチし、 創造的な解決策を見つけることを得意としています。
+                      複雑な課題に対して論理的にアプローチし、創造的な解決策を見つけることを得意としています。
                     </p>
                   </div>
                 </div>

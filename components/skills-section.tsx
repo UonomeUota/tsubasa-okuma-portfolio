@@ -87,7 +87,7 @@ export function SkillsSection() {
                   >
                     <img
                       src="/ASYMMETRY　ポスター.jpg"
-                      alt="public\ASYMMETRY　ポスター"
+                      alt="ASYMMETRY ポスター"
                       className="w-full h-full object-cover"
                     />
                   </a>
