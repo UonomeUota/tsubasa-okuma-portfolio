@@ -22,7 +22,7 @@ export function HeroSection() {
             <br />
             このwebサイトはReact、Next.js、tailwindcssで作成しました。
             <br />
-            基本情報技術者試験合格、応用情報技術者試験に向けて勉強中です。
+            応用情報技術者試験合格、高度情報技術者試験・弁理士試験に向けて勉強中です。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button

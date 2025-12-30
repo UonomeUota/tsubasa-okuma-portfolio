@@ -46,7 +46,7 @@ export function AboutSection() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                      応用情報技術者試験に向けて勉強中
+                      応用情報技術者試験に合格
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
@@ -82,7 +82,7 @@ export function AboutSection() {
                     <h4 className="font-medium text-secondary mb-2">継続的な学習姿勢</h4>
                     <p className="text-sm text-muted-foreground">
                       新しい技術やトレンドに敏感で、常に学習を続けています。
-                      基本情報技術者試験の合格を皮切りに、さらなるスキルアップを図っています。
+                      応用情報技術者試験の合格を皮切りに、さらなるスキルアップを図っています。
                     </p>
                   </div>
                   <div className="p-4 bg-card rounded-lg border">

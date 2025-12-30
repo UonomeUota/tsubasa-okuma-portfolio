@@ -19,7 +19,10 @@ export function SkillsSection() {
     { name: "危険物取扱者乙種4類", status: "取得済み", year: "2017年" },
     { name: "基本情報技術者", status: "取得済み", year: "2021年" },
     { name: "普通自動車免許", status: "取得済み", year: "2021年" },
-    { name: "応用情報技術者", status: "勉強中", year: "2025年予定" },
+    { name: "応用情報技術者", status: "取得済み", year: "2025年" },
+    { name: "知的財産管理技能検定３級", status: "試験結果待ち", year: "2026年" },
+    { name: "高度情報技術者試験", status: "勉強中", year: "2027年" },
+    { name: "弁理士試験", status: "勉強中", year: "2027年" },
   ]
 
   return (
@@ -120,7 +123,7 @@ export function SkillsSection() {
                     <h4 className="font-medium">{cert.name}</h4>
                     <Badge
                       variant={
-                        cert.status === "取得済み" ? "default" : cert.status === "勉強中" ? "secondary" : "outline"
+                        cert.status === "取得済み" ? "default" : cert.status === "勉強中" ? "secondary" : cert.status === "試験結果待ち" ? "outline" : "destructive"
                       }
                     >
                       {cert.status}
