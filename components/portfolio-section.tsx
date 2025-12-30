@@ -79,7 +79,7 @@ export function PortfolioSection() {
       demoUrl: "https://v0-medical-access-risk-map.vercel.app/",
     },
     {
-      id: 7,
+      id: 8,
       title: "licaria",
       category: "web",
       description: "原作者と二次利用者をライセンスで繋ぐプラットフォーム。",
