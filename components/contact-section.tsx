@@ -9,18 +9,62 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Mail, Github, Linkedin, Instagram } from "lucide-react"
 
+const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID
+
+type SubmitStatus = "idle" | "submitting" | "success" | "error"
+
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   })
+  const [status, setStatus] = useState<SubmitStatus>("idle")
+  const [errorMessage, setErrorMessage] = useState("")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // フォーム送信処理をここに実装
-    console.log("Form submitted:", formData)
-    alert("お問い合わせありがとうございます。後日ご連絡いたします。")
+
+    if (!FORMSPREE_ID) {
+      setStatus("error")
+      setErrorMessage(
+        "フォームの送信先が設定されていません。環境変数 NEXT_PUBLIC_FORMSPREE_ID を設定してください。",
+      )
+      return
+    }
+
+    setStatus("submitting")
+    setErrorMessage("")
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      })
+
+      if (response.ok) {
+        setStatus("success")
+        setFormData({ name: "", email: "", message: "" })
+      } else {
+        const data = await response.json().catch(() => null)
+        const message =
+          data?.errors?.map((err: { message: string }) => err.message).join(", ") ??
+          "送信に失敗しました。時間をおいて再度お試しください。"
+        setStatus("error")
+        setErrorMessage(message)
+      }
+    } catch {
+      setStatus("error")
+      setErrorMessage("ネットワークエラーが発生しました。時間をおいて再度お試しください。")
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -86,6 +130,7 @@ export function ContactSection() {
                     required
                     value={formData.name}
                     onChange={handleChange}
+                    disabled={status === "submitting"}
                     placeholder="山田太郎"
                   />
                 </div>
@@ -101,6 +146,7 @@ export function ContactSection() {
                     required
                     value={formData.email}
                     onChange={handleChange}
+                    disabled={status === "submitting"}
                     placeholder="yamada@example.com"
                   />
                 </div>
@@ -116,13 +162,29 @@ export function ContactSection() {
                     rows={6}
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="現在このお問い合わせフォームは整備中です。直接メールアドレスの方にご連絡ください。"
+                    disabled={status === "submitting"}
+                    placeholder="お問い合わせ内容をご記入ください。"
                   />
                 </div>
 
-                <Button type="submit" className="w-full bg-secondary hover:bg-secondary/90">
-                  送信する
+                <Button
+                  type="submit"
+                  className="w-full bg-secondary hover:bg-secondary/90"
+                  disabled={status === "submitting"}
+                >
+                  {status === "submitting" ? "送信中..." : "送信する"}
                 </Button>
+
+                {status === "success" && (
+                  <p className="text-sm text-green-600" role="status">
+                    お問い合わせありがとうございます。後日ご連絡いたします。
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-sm text-destructive" role="alert">
+                    {errorMessage}
+                  </p>
+                )}
               </form>
             </CardContent>
           </Card>
