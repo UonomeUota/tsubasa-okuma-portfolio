@@ -86,7 +86,7 @@ export function SkillsSection() {
                     className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
                   >
                     <img
-                      src="/ASYMMETRY　ポスター.jpg"
+                      src="/asymmetry-poster.jpg"
                       alt="ASYMMETRY ポスター"
                       className="w-full h-full object-cover"
                     />
@@ -98,7 +98,7 @@ export function SkillsSection() {
                     className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
                   >
                     <img
-                      src="/ロマンスの神様を踊る中川先生.jpg"
+                      src="/romance-nakagawa.jpg"
                       alt="3D作品サンプル2"
                       className="w-full h-full object-cover"
                     />
