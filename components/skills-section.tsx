@@ -4,15 +4,16 @@ import { Progress } from "@/components/ui/progress"
 
 export function SkillsSection() {
   const webSkills = [
-    { name: "React", level: 25, description: "簡単な静的WEBサイトが作れます。" },
-    { name: "Next.js", level: 20, description: "AIを用いてコードを書きウェブサイトが作れます。" },
-    { name: "Tailwind CSS", level: 10, description: "AIを用いて簡単なデザインが作成できます。" },
-    { name: "TypeScript", level: 10, description: "入門書を読み終えました。" },
+    { name: "React", level: 60, description: "簡単な静的WEBサイトが作れます。" },
+    { name: "Next.js", level: 60, description: "AIを用いてコードを書きウェブサイトが作れます。" },
+    { name: "Tailwind CSS", level: 50, description: "AIを用いて簡単なデザインが作成できます。" },
+    { name: "TypeScript", level: 70, description: "入門書を読み終えました。" },
   ]
 
   const threeDSkills = [
-    { name: "Three.js", level: 15, description: "簡単な3Dシーンが作れます。" },
-    { name: "Blender", level: 50, description: "キャラクターや背景のモデリング、アニメーションを作れます。" },
+    { name: "Three.js", level: 80, description: "簡単な3Dシーンが作れます。" },
+    { name: "Blender", level: 80, description: "キャラクターや背景のモデリング、アニメーションを作れます。" },
+    { name: "UE5", level: 70, description: "Unreal Engine 5 でのシーン制作や映像表現ができます。" },
   ]
 
   const certifications = [
