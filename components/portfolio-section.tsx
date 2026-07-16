@@ -41,16 +41,6 @@ export function PortfolioSection() {
       githubUrl: "https://github.com/UonomeUota/Festival-of-Tomorrow",
     },
     {
-      id: 4,
-      title: "建築ビジュアライゼーション※現在修正中です。",
-      category: "3d",
-      description: "BlenderとFusion 360で制作した建築物の3Dモデル。リアルなライティングとマテリアル。",
-      image: "/architectural-visualization.png",
-      technologies: ["Blender", "Fusion 360", "Photoshop",],
-      demoUrl: "#",
-      githubUrl: "#",
-    },
-    {
       id: 5,
       title: "ASYMMETRY",
       category: "3d",
