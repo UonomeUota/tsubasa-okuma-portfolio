@@ -14,7 +14,7 @@ export function HeroSection() {
               IT×デザインで価値を生む
               <br className="lg:hidden" />
               <span className="hidden lg:inline"> </span>
-              エンジニア志望
+              フルスタックエンジニア
             </span>
           </h1>
           <p className="text-lg text-muted-foreground mb-8 text-pretty">
