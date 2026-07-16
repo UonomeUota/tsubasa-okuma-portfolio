@@ -44,6 +44,13 @@ export function AboutSection() {
                       </div>
                       <Badge variant="outline">2026-</Badge>
                     </div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <p className="font-medium">テクノモーケル</p>
+                        <p className="text-sm text-muted-foreground">個人事業主として活動</p>
+                      </div>
+                      <Badge variant="outline">2026-</Badge>
+                    </div>
                   </div>
                 </div>
 
@@ -77,6 +84,14 @@ export function AboutSection() {
               <CardContent>
                 <h3 className="text-xl font-semibold mb-4">私の強み</h3>
                 <div className="space-y-4">
+                  <div className="p-4 bg-card rounded-lg border">
+                    <h4 className="font-medium text-secondary mb-2">制作を一貫して手がける総合力</h4>
+                    <p className="text-sm text-muted-foreground">
+                      ウェブサイト制作、3DCG制作、動画制作、そして作業の自動化まで、
+                      企画から実装・運用までを一人で一貫して手がけられることが最大の強みです。
+                      分野をまたいで最適な手段を選べるため、制作物に統一感を持たせながら効率的に形にできます。
+                    </p>
+                  </div>
                   <div className="p-4 bg-card rounded-lg border">
                     <h4 className="font-medium text-secondary mb-2">ITスキル × デザイン的発想</h4>
                     <p className="text-sm text-muted-foreground">
