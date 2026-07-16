@@ -36,7 +36,13 @@ export function AboutSection() {
                         <p className="font-medium">国税専門官　理工デジタル採用</p>
                         <p className="text-sm text-muted-foreground">個人課税部門</p>
                       </div>
-                      <Badge variant="outline">2025-</Badge>
+                      <Badge variant="secondary">2025-2026</Badge>
+                    </div>
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <p className="font-medium">株式会社キャリッジリターン</p>
+                      </div>
+                      <Badge variant="outline">2026-</Badge>
                     </div>
                   </div>
                 </div>
