@@ -126,11 +126,16 @@
     height: 100%;
     box-sizing: border-box;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
+    font-family: "Noto Sans JP", "Yu Gothic", "Hiragino Kaku Gothic ProN", system-ui, sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -138,5 +143,24 @@
   main {
     margin: 0;
     padding: 0;
+  }
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+  ::selection {
+    background: color-mix(in oklab, var(--secondary) 28%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

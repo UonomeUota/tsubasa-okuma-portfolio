@@ -1,13 +1,20 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Github, Linkedin, Instagram } from "lucide-react"
+
+const contactEmail = "tsubasaocarina@gmail.com"
+
+const socialLinks = [
+  { name: "GitHub", icon: Github, url: "https://github.com/UonomeUota" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/tsubasa-okuma/" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/okuwing/" },
+]
 
 const FORMSPREE_ID = process.env.NEXT_PUBLIC_FORMSPREE_ID
 
@@ -67,82 +74,53 @@ export function ContactSection() {
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }))
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((current) => ({ ...current, [event.target.name]: event.target.value }))
   }
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      icon: Github,
-      url: "https://github.com/UonomeUota",
-      color: "hover:text-gray-900",
-    },
-    {
-      name: "LinkedIn",
-      icon: Linkedin,
-      url: "https://www.linkedin.com/in/tsubasa-okuma/",
-      color: "hover:text-blue-600",
-    },
-    {
-      name: "Instagram",
-      icon: Instagram,
-      url: "https://www.instagram.com/okuwing/",
-      color: "hover:text-blue-400",
-    },
-    {
-      name: "Email",
-      icon: Mail,
-      url: "mailto:tsubasaocarina@gmail.com",
-      color: "hover:text-red-500",
-    },
-  ]
 
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">コンタクト</h2>
-          <p className="text-muted-foreground text-lg text-pretty">
-            お仕事のご相談やご質問がございましたら、お気軽にお問い合わせください
+        <div className="mb-12 text-center md:mb-16">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Contact</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">お問い合わせ</h2>
+          <p className="text-pretty text-lg text-muted-foreground">
+            お仕事のご相談やご質問がございましたら、お気軽にご連絡ください。
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* お問い合わせフォーム */}
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
           <Card>
             <CardHeader>
               <CardTitle>お問い合わせフォーム</CardTitle>
             </CardHeader>
             <CardContent>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    お名前 <span className="text-destructive">*</span>
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium">
+                    お名前 <span className="text-destructive" aria-hidden="true">*</span>
                   </label>
                   <Input
                     id="name"
                     name="name"
-                    type="text"
+                    autoComplete="name"
                     required
                     value={formData.name}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    placeholder="山田太郎"
+                    placeholder="山田 太郎"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    メールアドレス <span className="text-destructive">*</span>
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium">
+                    返信先メールアドレス <span className="text-destructive" aria-hidden="true">*</span>
                   </label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
+                    autoComplete="email"
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -152,8 +130,8 @@ export function ContactSection() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    メッセージ <span className="text-destructive">*</span>
+                  <label htmlFor="message" className="mb-2 block text-sm font-medium">
+                    ご相談内容 <span className="text-destructive" aria-hidden="true">*</span>
                   </label>
                   <Textarea
                     id="message"
@@ -163,7 +141,7 @@ export function ContactSection() {
                     value={formData.message}
                     onChange={handleChange}
                     disabled={status === "submitting"}
-                    placeholder="お問い合わせ内容をご記入ください。"
+                    placeholder="ご相談内容をご記入ください"
                   />
                 </div>
 
@@ -172,16 +150,17 @@ export function ContactSection() {
                   className="w-full bg-secondary hover:bg-secondary/90"
                   disabled={status === "submitting"}
                 >
+                  <Send aria-hidden="true" />
                   {status === "submitting" ? "送信中..." : "送信する"}
                 </Button>
 
                 {status === "success" && (
-                  <p className="text-sm text-green-600" role="status">
+                  <p className="text-center text-sm text-green-600" role="status">
                     お問い合わせありがとうございます。後日ご連絡いたします。
                   </p>
                 )}
                 {status === "error" && (
-                  <p className="text-sm text-destructive" role="alert">
+                  <p className="text-center text-sm text-destructive" role="alert">
                     {errorMessage}
                   </p>
                 )}
@@ -189,33 +168,27 @@ export function ContactSection() {
             </CardContent>
           </Card>
 
-          {/* 連絡先情報 */}
           <div className="space-y-8">
             <Card>
               <CardHeader>
                 <CardTitle>直接連絡</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Mail className="w-5 h-5 text-secondary" />
-                  <div>
+              <CardContent className="space-y-5">
+                <div className="flex items-start gap-3">
+                  <Mail className="mt-0.5 size-5 shrink-0 text-secondary" aria-hidden="true" />
+                  <div className="min-w-0">
                     <p className="font-medium">メールアドレス</p>
-                    <a
-                      href="mailto:tsubasaocarina@gmail.com"
-                      className="text-muted-foreground hover:text-secondary transition-colors"
-                    >
-                      tsubasaocarina@gmail.com
+                    <a href={`mailto:${contactEmail}`} className="break-all text-muted-foreground transition-colors hover:text-secondary">
+                      {contactEmail}
                     </a>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t">
-                  <p className="font-medium mb-3">返信について</p>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• 通常24時間以内にご返信いたします</li>
-                    <li>• お急ぎの場合は件名に【急】とご記載ください</li>
-                    <li>• 技術的なご質問も歓迎です</li>
-                  </ul>
+                <div className="border-t pt-5">
+                  <p className="mb-2 font-medium">ご連絡について</p>
+                  <p className="text-sm leading-6 text-muted-foreground">
+                    内容を確認後、順次ご返信します。技術的なご質問や制作のご相談も歓迎しています。
+                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -225,25 +198,19 @@ export function ContactSection() {
                 <CardTitle>SNS・プロフィール</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
                   {socialLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex items-center gap-3 p-3 rounded-lg border hover:border-secondary/50 transition-all ${link.color}`}
+                      className="flex items-center gap-3 rounded-lg border p-3 transition-all hover:border-secondary/50 hover:bg-secondary/5 hover:text-secondary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                     >
-                      <link.icon className="w-5 h-5" />
+                      <link.icon className="size-5" aria-hidden="true" />
                       <span className="font-medium">{link.name}</span>
                     </a>
                   ))}
-                </div>
-
-                <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                  <p className="text-sm text-muted-foreground">
-                    GitHubでは学習中のプロジェクトや実験的なコードを公開しています。 ぜひご覧ください！
-                  </p>
                 </div>
               </CardContent>
             </Card>

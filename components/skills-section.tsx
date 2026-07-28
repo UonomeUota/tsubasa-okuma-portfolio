@@ -1,3 +1,4 @@
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
@@ -29,8 +30,9 @@ export function SkillsSection() {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">スキル</h2>
+        <div className="mb-12 text-center md:mb-16">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Skills</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">スキル</h2>
           <p className="text-muted-foreground text-lg text-pretty">現在学習中の技術スタックと取得資格</p>
         </div>
 
@@ -46,12 +48,12 @@ export function SkillsSection() {
             <CardContent className="space-y-6">
               {webSkills.map((skill) => (
                 <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between items-center">
+                  <div className="flex items-center justify-between gap-3">
                     <span className="font-medium">{skill.name}</span>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2" indicatorClassName="!bg-[#D5545D]" />
-                  <p className="text-xs text-muted-foreground">{skill.description}</p>
+                  <Progress value={skill.level} aria-label={`${skill.name} ${skill.level}%`} indicatorClassName="!bg-[#D5545D]" />
+                  <p className="text-sm leading-6 text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
             </CardContent>
@@ -68,12 +70,12 @@ export function SkillsSection() {
             <CardContent className="space-y-6">
               {threeDSkills.map((skill) => (
                 <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between items-center">
+                  <div className="flex items-center justify-between gap-3">
                     <span className="font-medium">{skill.name}</span>
                     <span className="text-sm text-muted-foreground">{skill.level}%</span>
                   </div>
-                  <Progress value={skill.level} className="h-2" indicatorClassName="!bg-[#D5545D]" />
-                  <p className="text-xs text-muted-foreground">{skill.description}</p>
+                  <Progress value={skill.level} aria-label={`${skill.name} ${skill.level}%`} indicatorClassName="!bg-[#D5545D]" />
+                  <p className="text-sm leading-6 text-muted-foreground">{skill.description}</p>
                 </div>
               ))}
 
@@ -86,10 +88,12 @@ export function SkillsSection() {
                     rel="noopener noreferrer"
                     className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
                   >
-                    <img
+                    <Image
                       src="/asymmetry-poster.jpg"
                       alt="ASYMMETRY ポスター"
-                      className="w-full h-full object-cover"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover"
                     />
                   </a>
                   <a
@@ -98,10 +102,12 @@ export function SkillsSection() {
                     rel="noopener noreferrer"
                     className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
                   >
-                    <img
+                    <Image
                       src="/romance-nakagawa.jpg"
-                      alt="3D作品サンプル2"
-                      className="w-full h-full object-cover"
+                      alt="3Dアニメーション作品"
+                      width={320}
+                      height={320}
+                      className="h-full w-full object-cover"
                     />
                   </a>
                 </div>

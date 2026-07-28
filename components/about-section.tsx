@@ -3,48 +3,49 @@ import { Badge } from "@/components/ui/badge"
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="bg-muted/30 py-20">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">自己紹介</h2>
+        <div className="mb-12 text-center md:mb-16">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">About me</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">自己紹介</h2>
           <p className="text-muted-foreground text-lg text-pretty">私について詳しくご紹介します</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <Card className="p-8">
+            <Card>
               <CardContent className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold mb-3">学歴・経歴</h3>
                   <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                    <div>
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                      <div>
                         <p className="font-medium">沖縄県立読谷高等学校</p>
                         <p className="text-sm text-muted-foreground">普通科特進クラス理系選択</p>
                       </div>
                       <Badge variant="secondary">2017-2020</Badge>
                     </div>
-                    <div className="flex justify-between items-start">
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">公立大学法人静岡文化芸術大学　デザイン学部</p>
                         <p className="text-sm text-muted-foreground">インタラクション(3DCG/CAD プログラミング)専攻</p>
                       </div>
                       <Badge variant="secondary">2020-2025</Badge>
                     </div>
-                    <div className="flex justify-between items-start">
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">国税専門官　理工デジタル採用</p>
                         <p className="text-sm text-muted-foreground">個人課税部門</p>
                       </div>
                       <Badge variant="secondary">2025-2026</Badge>
                     </div>
-                    <div className="flex justify-between items-start">
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">株式会社キャリッジリターン</p>
                       </div>
                       <Badge variant="outline">2026-</Badge>
                     </div>
-                    <div className="flex justify-between items-start">
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">テクノモーケル</p>
                         <p className="text-sm text-muted-foreground">個人事業主として活動</p>
@@ -80,7 +81,7 @@ export function AboutSection() {
           </div>
 
           <div>
-            <Card className="p-8 bg-gradient-to-br from-secondary/5 to-accent/5">
+            <Card className="bg-gradient-to-br from-secondary/5 to-accent/5">
               <CardContent>
                 <h3 className="text-xl font-semibold mb-4">私の強み</h3>
                 <div className="space-y-4">

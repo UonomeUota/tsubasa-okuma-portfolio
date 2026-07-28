@@ -8,7 +8,7 @@ import { AnimatedBackground } from "@/components/animated-background"
 
 export default function Home() {
   return (
-    <main className="min-h-screen m-0 p-0">
+    <main className="min-h-screen overflow-x-clip">
       <AnimatedBackground />
       <Navigation />
       <HeroSection />
@@ -16,6 +16,9 @@ export default function Home() {
       <SkillsSection />
       <PortfolioSection />
       <ContactSection />
+      <footer className="border-t border-border/70 bg-card/60 py-8 text-center text-sm text-muted-foreground">
+        <p>© {new Date().getFullYear()} Tsubasa Okuma</p>
+      </footer>
     </main>
   )
 }

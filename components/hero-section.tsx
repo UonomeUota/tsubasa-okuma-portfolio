@@ -1,14 +1,16 @@
 "use client"
 
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 md:pt-0">
-      <div className="relative z-10 container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pb-16 pt-28 md:py-24">
+      <div className="relative z-10 container mx-auto grid items-center gap-14 px-6 md:grid-cols-2">
         <div className="text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-            <span className="text-foreground">奥間　翼</span>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Web Development & 3DCG</p>
+          <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight md:text-6xl">
+            <span className="text-foreground">奥間 翼</span>
             <br />
             <span className="text-secondary text-2xl md:text-3xl font-normal">
               IT×デザインで価値を生む
@@ -17,10 +19,10 @@ export function HeroSection() {
               フルスタックエンジニア
             </span>
           </h1>
-          <p className="text-lg text-muted-foreground mb-8 text-pretty">
+          <p className="mb-8 text-pretty text-base leading-8 text-muted-foreground md:text-lg">
             React、Next.js、Three.jsを学習中。
             <br />
-            このwebサイトはReact、Next.js、tailwindcssで作成しました。
+            Web開発と3DCGの両方から、伝わる体験づくりに取り組んでいます。
             <br />
             応用情報技術者試験に合格し、高度情報技術者試験・弁理士試験に向けて勉強中です。
           </p>
@@ -44,17 +46,22 @@ export function HeroSection() {
 
         <div className="flex justify-center">
           <div className="relative">
-            <div className="w-80 h-80 lg:w-[26rem] lg:h-[26rem] rounded-full bg-gradient-to-br from-secondary/20 to-accent/20 flex items-center justify-center">
-              <img
-                src="/profile_photo.webp"
-                alt="奥間　翼のプロフィール写真"
-                className="w-72 h-72 lg:w-[23.4rem] lg:h-[23.4rem] rounded-full object-cover border-4 border-card shadow-2xl"
-              />
+            <div className="relative flex size-72 items-center justify-center rounded-full bg-gradient-to-br from-secondary/20 to-accent/20 sm:size-80 lg:size-[26rem]">
+              <div className="relative size-[90%] overflow-hidden rounded-full border-4 border-card shadow-2xl">
+                <Image
+                  src="/profile_photo.webp"
+                  alt="奥間 翼のプロフィール写真"
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 374px, (min-width: 640px) 288px, 260px"
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="absolute -top-4 -right-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center animate-bounce">
+            <div aria-hidden="true" className="absolute -right-2 -top-3 flex size-14 items-center justify-center rounded-full bg-secondary shadow-lg sm:-right-4 sm:size-16">
               <span className="text-2xl">💻</span>
             </div>
-            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-secondary rounded-full flex items-center justify-center animate-bounce">
+            <div aria-hidden="true" className="absolute -bottom-3 -left-2 flex size-14 items-center justify-center rounded-full bg-secondary shadow-lg sm:-left-4 sm:size-16">
               <span className="text-2xl">🎨</span>
             </div>
           </div>

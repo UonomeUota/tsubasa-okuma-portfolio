@@ -1,51 +1,83 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const navigationItems = [
+  { href: "#hero", label: "ホーム" },
+  { href: "#about", label: "自己紹介" },
+  { href: "#skills", label: "スキル" },
+  { href: "#portfolio", label: "作品集" },
+  { href: "#contact", label: "コンタクト" },
+]
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener("scroll", handleScroll)
+    const handleScroll = () => setIsScrolled(window.scrollY > 24)
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
+  useEffect(() => {
+    const closeMenu = () => setIsMenuOpen(false)
+    window.addEventListener("resize", closeMenu)
+    return () => window.removeEventListener("resize", closeMenu)
+  }, [])
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-card/80 backdrop-blur-md border-b border-border" : "bg-transparent"
+      aria-label="メインナビゲーション"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        isScrolled || isMenuOpen
+          ? "border-b border-border/80 bg-card/90 shadow-sm backdrop-blur-md"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div className="text-xl font-bold text-foreground">Portfolio</div>
-          <div className="hidden md:flex space-x-8">
-            <Button variant="ghost" onClick={() => scrollToSection("hero")}>
-              ホーム
+      <div className="container mx-auto flex h-16 items-center justify-between px-6">
+        <a href="#hero" className="rounded-sm text-lg font-bold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+          Tsubasa Okuma
+        </a>
+
+        <div className="hidden items-center gap-1 md:flex">
+          {navigationItems.map((item) => (
+            <Button key={item.href} variant="ghost" asChild>
+              <a href={item.href}>{item.label}</a>
             </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("about")}>
-              自己紹介
-            </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("skills")}>
-              スキル
-            </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("portfolio")}>
-              作品集
-            </Button>
-            <Button variant="ghost" onClick={() => scrollToSection("contact")}>
-              コンタクト
-            </Button>
+          ))}
+        </div>
+
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className="md:hidden"
+          aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-navigation"
+          onClick={() => setIsMenuOpen((open) => !open)}
+        >
+          {isMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+        </Button>
+      </div>
+
+      {isMenuOpen && (
+        <div id="mobile-navigation" className="border-t border-border/70 bg-card px-4 py-3 md:hidden">
+          <div className="grid gap-1">
+            {navigationItems.map((item) => (
+              <Button key={item.href} variant="ghost" className="justify-start" asChild>
+                <a href={item.href} onClick={() => setIsMenuOpen(false)}>
+                  {item.label}
+                </a>
+              </Button>
+            ))}
           </div>
         </div>
-      </div>
+      )}
     </nav>
   )
 }
