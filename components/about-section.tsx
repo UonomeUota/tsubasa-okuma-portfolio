@@ -34,17 +34,17 @@ export function AboutSection() {
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
+                        <p className="font-medium">福島特許事務所</p>
+                        <p className="text-sm text-muted-foreground">知財管理、先行技術調査、業務効率化・自動化</p>
+                      </div>
+                      <Badge variant="secondary">2024.03–07</Badge>
+                    </div>
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                      <div>
                         <p className="font-medium">国税専門官　理工デジタル採用</p>
                         <p className="text-sm text-muted-foreground">個人課税部門</p>
                       </div>
                       <Badge variant="secondary">2025.04–2026.05</Badge>
-                    </div>
-                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
-                      <div>
-                        <p className="font-medium">特許事務所</p>
-                        <p className="text-sm text-muted-foreground">知財管理、先行技術調査、業務効率化・自動化</p>
-                      </div>
-                      <Badge variant="secondary">約6か月</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
