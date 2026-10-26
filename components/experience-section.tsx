@@ -1,4 +1,4 @@
-import { ArrowRight, DatabaseZap, FileCheck2, ShoppingBag, Sparkles } from "lucide-react"
+import { ArrowRight, DatabaseZap, ExternalLink, FileCheck2, ShoppingBag, Sparkles } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
@@ -16,7 +16,7 @@ const experiences = [
     title: "知財管理データの移行を効率化",
     icon: DatabaseZap,
     challenge: "多数の知財案件がExcelで管理され、移行作業に手間がかかる状況でした。",
-    action: "数千件規模の紙・Excel管理データを、Python等を用いて知財管理ソフトへ移行する工程を自動化しました。",
+    action: "約3,000件の紙・Excel管理データを、Python等を用いて知財管理ソフトへ移行する工程を自動化しました。",
     technologies: ["Python", "Excel", "業務フロー改善"],
   },
   {
@@ -28,12 +28,13 @@ const experiences = [
     technologies: ["業務自動化", "文書作成", "要件整理"],
   },
   {
-    label: "Web開発・EC運用",
-    title: "ECサイトの改修・運用を支援",
+    label: "Web開発・EC運用（副業）",
+    title: "KITTO ONE / Oki Femcare ECサイト",
     icon: ShoppingBag,
-    challenge: "継続的に運用するECサイトでは、表示や機能の改善が必要になります。",
-    action: "副業でECサイトの修正・改善に携わり、既存システムの構造を把握しながら実装・調整しています。",
-    technologies: ["ECサイト", "Web実装", "運用改善"],
+    challenge: "既存のECプラットフォームを活用しつつ、ブランドの世界観と購入体験を両立する必要がありました。",
+    action: "副業でサイトの実装・改修を担当。W2のLiquidテンプレートや既存CMSの構造を把握し、ページ調整、表示の改善、決済導線の検証などに携わっています。",
+    technologies: ["W2", "Liquid", "ECサイト", "運用改善"],
+    url: "https://oki-femcare.com/",
   },
 ]
 
@@ -78,12 +79,22 @@ export function ExperienceSection() {
                     <Badge key={technology} variant="outline" className="font-normal">{technology}</Badge>
                   ))}
                 </div>
+                {experience.url && (
+                  <a
+                    href={experience.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex w-fit items-center gap-2 text-sm font-medium text-secondary underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    公開サイトを見る <ExternalLink className="size-4" aria-hidden="true" />
+                  </a>
+                )}
               </CardContent>
             </Card>
           ))}
         </div>
         <p className="mt-6 text-center text-xs leading-6 text-muted-foreground">
-          ※守秘義務に配慮し、案件名・顧客情報・詳細な業務データは掲載していません。
+          ※公開済みのサイト以外については、守秘義務に配慮し案件名・顧客情報・詳細な業務データを掲載していません。
         </p>
       </div>
     </section>

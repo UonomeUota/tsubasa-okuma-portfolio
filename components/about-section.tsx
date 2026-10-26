@@ -63,7 +63,7 @@ export function AboutSection() {
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">副業・個人開発</p>
-                        <p className="text-sm text-muted-foreground">ECサイトの改修・改善、Webアプリ制作</p>
+                        <p className="text-sm text-muted-foreground">Oki FemcareのEC改修、Webアプリ・BIM/CAD個人開発</p>
                       </div>
                       <Badge variant="outline">2026.08–</Badge>
                     </div>
@@ -83,11 +83,15 @@ export function AboutSection() {
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                      ECサイトの改修・運用支援
+                      W2・LiquidによるECサイトの改修・運用支援
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
                       3DCG・映像制作、UI/UXを意識した設計
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full"></span>
+                      Rust・Qtを用いたBIM/CADソフトの個人開発（開発中）
                     </li>
                   </ul>
                 </div>

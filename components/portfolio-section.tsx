@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-type ProjectCategory = "web" | "3d" | "plugin"
+type ProjectCategory = "web" | "3d" | "plugin" | "bim"
 
 type Project = {
   id: number
@@ -18,7 +18,7 @@ type Project = {
   technologies: string[]
   demoUrl?: string
   githubUrl?: string
-  status?: "準備中"
+  status?: "準備中" | "開発中"
 }
 
 const projects: Project[] = [
@@ -88,23 +88,34 @@ const projects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     demoUrl: "https://v0-licaria.vercel.app/",
   },
+  {
+    id: 9,
+    title: "Tsugilith（ツギリス）— BIM/CAD",
+    category: "bim",
+    description: "将来のオープンソース公開を目指して個人開発中のデスクトップBIM/CAD。Rustを中核にQt/QMLでUIを構築し、壁・床・柱・梁・窓・ドアの配置、平面図・3D表示、数値編集、Undo/Redoなどを試作しています。実務完成版ではありません。",
+    image: "/tsugilith-architecture.svg",
+    technologies: ["Rust", "Qt / QML", "C++", "BIM / CAD"],
+    status: "開発中",
+  },
 ]
 
 const categories: Array<{ id: "all" | ProjectCategory; label: string }> = [
   { id: "all", label: "すべて" },
   { id: "web", label: "Webアプリ" },
+  { id: "bim", label: "BIM / CAD" },
   { id: "3d", label: "3DCG作品" },
   { id: "plugin", label: "プラグイン" },
 ]
 
 const categoryLabels: Record<ProjectCategory, string> = {
   web: "Web",
+  bim: "BIM/CAD",
   "3d": "3DCG",
   plugin: "プラグイン",
 }
 
 // 転職用の閲覧では、機能や課題設定が伝わるWebアプリを先に紹介します。
-const featuredOrder = [2, 7, 8, 3, 6, 5, 1]
+const featuredOrder = [9, 2, 7, 8, 3, 6, 5, 1]
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<"all" | ProjectCategory>("all")
@@ -120,7 +131,7 @@ export function PortfolioSection() {
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Selected works</p>
           <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">制作物・個人開発</h2>
           <p className="mx-auto max-w-2xl text-pretty text-lg leading-relaxed text-muted-foreground">
-            Webアプリケーション、3DCG、プラグインの個人制作。実務経験とは分けて掲載しています。
+            BIM/CAD、Webアプリケーション、3DCG、プラグインの個人制作。実務経験とは分けて掲載しています。
           </p>
         </div>
 
@@ -196,7 +207,7 @@ export function PortfolioSection() {
                   {project.status && (
                     <div className="flex h-8 w-full items-center justify-center gap-2 rounded-md border bg-muted/50 px-3 text-sm text-muted-foreground">
                       <Clock3 className="size-4" aria-hidden="true" />
-                      詳細ページを準備中
+                      {project.status === "開発中" ? "開発中・公開準備中" : "詳細ページを準備中"}
                     </div>
                   )}
                 </div>

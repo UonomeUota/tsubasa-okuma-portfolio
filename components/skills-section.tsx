@@ -21,19 +21,20 @@ const skillGroups = [
     skills: [
       { name: "Python / OpenAI API", use: "広告文の生成・知財管理データの移行" },
       { name: "Excel / マクロ", use: "管理データの整理・定型業務の自動化" },
-      { name: "ECサイト / CMS", use: "既存サイトの改修・運用支援" },
+      { name: "W2 / Liquid / CMS", use: "Oki FemcareのECサイト改修・運用支援" },
       { name: "業務分析・要件整理", use: "課題の洗い出しと改善提案" },
     ],
   },
   {
     icon: "🎨",
-    title: "デザイン・3DCG",
-    description: "デザイン学部での学びと自主制作の経験",
+    title: "デザイン・3DCG・BIM",
+    description: "デザイン学部での学びと自主制作・開発の経験",
     skills: [
       { name: "Blender", use: "モデリング・アニメーション" },
       { name: "Unreal Engine 5", use: "3Dシーン・映像表現" },
       { name: "Three.js", use: "Web上の3D表現" },
       { name: "DaVinci Resolve", use: "映像編集・カスタムFuse制作" },
+      { name: "Rust / Qt / QML", use: "BIM/CADソフト Tsugilith の個人開発（開発中）" },
     ],
   },
 ]
@@ -76,7 +77,7 @@ export function SkillsSection() {
                     </li>
                   ))}
                 </ul>
-                {group.title === "デザイン・3DCG" && (
+                {group.title === "デザイン・3DCG・BIM" && (
                   <div className="mt-5 rounded-lg bg-muted/50 p-3">
                     <p className="mb-3 text-sm font-medium">映像作品</p>
                     <div className="grid grid-cols-2 gap-3">
