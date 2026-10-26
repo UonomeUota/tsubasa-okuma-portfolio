@@ -51,7 +51,7 @@ export function AboutSection() {
                         <p className="font-medium">株式会社キャリッジリターン</p>
                         <p className="text-sm text-muted-foreground">ITエンジニア／Webシステム開発</p>
                       </div>
-                      <Badge variant="outline">2026.06–</Badge>
+                      <Badge variant="outline">2026.05–</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
