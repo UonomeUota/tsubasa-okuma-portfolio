@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import { ArrowDownRight, ArrowUpRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function HeroSection() {
@@ -8,38 +9,40 @@ export function HeroSection() {
     <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden pb-16 pt-28 md:py-24">
       <div className="relative z-10 container mx-auto grid items-center gap-14 px-6 md:grid-cols-2">
         <div className="text-center md:text-left">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Web Development & 3DCG</p>
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Software Engineering · Process Improvement · Design</p>
           <h1 className="mb-6 text-balance text-4xl font-bold tracking-tight md:text-6xl">
             <span className="text-foreground">奥間 翼</span>
             <br />
-            <span className="text-secondary text-2xl md:text-3xl font-normal">
-              IT×デザインで価値を生む
+            <span className="text-secondary text-2xl font-medium leading-relaxed md:text-3xl">
+              課題を見つけ、仕組みを変え、
               <br className="lg:hidden" />
               <span className="hidden lg:inline"> </span>
-              フルスタックエンジニア
+              使いやすい形にする。
             </span>
           </h1>
           <p className="mb-8 text-pretty text-base leading-8 text-muted-foreground md:text-lg">
-            React、Next.js、Three.jsを学習中。
-            <br />
-            Web開発と3DCGの両方から、伝わる体験づくりに取り組んでいます。
-            <br />
-            応用情報技術者試験に合格し、高度情報技術者試験・弁理士試験に向けて勉強中です。
+            知財業務の自動化、Web・ECサイトの開発・改善、3DCG制作を経験。
+            利用者の目線と技術の両方から、現場の困りごとを解決するITエンジニアです。
           </p>
+          <ul className="mb-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-foreground/80 md:justify-start">
+            <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />業務改善を提案・実装</li>
+            <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />Web開発・ECサイト改修</li>
+            <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />応用情報技術者</li>
+          </ul>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Button
               size="lg"
               className="bg-secondary hover:bg-secondary/90"
               onClick={() => document.getElementById("portfolio")?.scrollIntoView({ behavior: "smooth" })}
             >
-              作品を見る
+              制作実績を見る <ArrowUpRight className="ml-1 size-4" aria-hidden="true" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })}
             >
-              お問い合わせ
+              業務改善の実績 <ArrowDownRight className="ml-1 size-4" aria-hidden="true" />
             </Button>
           </div>
         </div>

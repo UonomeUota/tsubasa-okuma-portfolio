@@ -7,8 +7,9 @@ import { Button } from "@/components/ui/button"
 const navigationItems = [
   { href: "#hero", label: "ホーム" },
   { href: "#about", label: "自己紹介" },
+  { href: "#experience", label: "業務実績" },
   { href: "#skills", label: "スキル" },
-  { href: "#portfolio", label: "作品集" },
+  { href: "#portfolio", label: "制作物" },
   { href: "#contact", label: "コンタクト" },
 ]
 
@@ -43,7 +44,7 @@ export function Navigation() {
           Tsubasa Okuma
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-1 lg:flex">
           {navigationItems.map((item) => (
             <Button key={item.href} variant="ghost" asChild>
               <a href={item.href}>{item.label}</a>
@@ -55,7 +56,7 @@ export function Navigation() {
           type="button"
           variant="ghost"
           size="icon"
-          className="md:hidden"
+          className="lg:hidden"
           aria-label={isMenuOpen ? "メニューを閉じる" : "メニューを開く"}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-navigation"
@@ -66,7 +67,7 @@ export function Navigation() {
       </div>
 
       {isMenuOpen && (
-        <div id="mobile-navigation" className="border-t border-border/70 bg-card px-4 py-3 md:hidden">
+        <div id="mobile-navigation" className="border-t border-border/70 bg-card px-4 py-3 lg:hidden">
           <div className="grid gap-1">
             {navigationItems.map((item) => (
               <Button key={item.href} variant="ghost" className="justify-start" asChild>

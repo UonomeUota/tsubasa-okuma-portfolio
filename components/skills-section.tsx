@@ -1,146 +1,113 @@
 import Image from "next/image"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+
+const skillGroups = [
+  {
+    icon: "💻",
+    title: "Webアプリケーション開発",
+    description: "個人制作やWeb開発で使用している技術",
+    skills: [
+      { name: "TypeScript / JavaScript", use: "画面・機能の実装" },
+      { name: "React / Next.js", use: "Webアプリケーション制作" },
+      { name: "HTML / CSS / Tailwind CSS", use: "UI設計・レスポンシブ対応" },
+      { name: "Git / GitHub", use: "ソースコード管理" },
+    ],
+  },
+  {
+    icon: "🔧",
+    title: "業務改善・運用",
+    description: "実務の課題解決に使ったスキル",
+    skills: [
+      { name: "Excel / マクロ", use: "管理データの移行・定型業務の自動化" },
+      { name: "ECサイト / CMS", use: "既存サイトの改修・運用支援" },
+      { name: "業務分析・要件整理", use: "課題の洗い出しと改善提案" },
+      { name: "情報セキュリティ", use: "基本的なリスク・対策の知識" },
+    ],
+  },
+  {
+    icon: "🎨",
+    title: "デザイン・3DCG",
+    description: "デザイン学部での学びと自主制作の経験",
+    skills: [
+      { name: "Blender", use: "モデリング・アニメーション" },
+      { name: "Unreal Engine 5", use: "3Dシーン・映像表現" },
+      { name: "Three.js", use: "Web上の3D表現" },
+      { name: "DaVinci Resolve", use: "映像編集・カスタムFuse制作" },
+    ],
+  },
+]
+
+const certifications = [
+  { name: "応用情報技術者試験", year: "2025年", category: "IT" },
+  { name: "情報セキュリティマネジメント試験", year: "2026年", category: "セキュリティ" },
+  { name: "基本情報技術者試験", year: "2021年", category: "IT" },
+  { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
+]
 
 export function SkillsSection() {
-  const webSkills = [
-    { name: "React", level: 60, description: "簡単な静的WEBサイトが作れます。" },
-    { name: "Next.js", level: 60, description: "AIを用いてコードを書きウェブサイトが作れます。" },
-    { name: "Tailwind CSS", level: 50, description: "AIを用いて簡単なデザインが作成できます。" },
-    { name: "TypeScript", level: 70, description: "入門書を読み終えました。" },
-  ]
-
-  const threeDSkills = [
-    { name: "Three.js", level: 80, description: "簡単な3Dシーンが作れます。" },
-    { name: "Blender", level: 80, description: "キャラクターや背景のモデリング、アニメーションを作れます。" },
-    { name: "UE5", level: 70, description: "Unreal Engine 5 でのシーン制作や映像表現ができます。" },
-  ]
-
-  const certifications = [
-    { name: "危険物取扱者乙種4類", status: "取得済み", year: "2017年" },
-    { name: "基本情報技術者", status: "取得済み", year: "2021年" },
-    { name: "普通自動車免許", status: "取得済み", year: "2021年" },
-    { name: "応用情報技術者", status: "取得済み", year: "2025年" },
-    { name: "知的財産管理技能検定３級", status: "取得済み", year: "2026年" },
-    { name: "高度情報技術者試験", status: "勉強中", year: "2027年" },
-    { name: "弁理士試験", status: "勉強中", year: "2027年" },
-  ]
-
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-6">
         <div className="mb-12 text-center md:mb-16">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Skills</p>
-          <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">スキル</h2>
-          <p className="text-muted-foreground text-lg text-pretty">現在学習中の技術スタックと取得資格</p>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Skills & certifications</p>
+          <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">技術・資格</h2>
+          <p className="text-pretty text-lg text-muted-foreground">数値による自己評価ではなく、使ってきた場面と合わせて紹介します。</p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Web開発スキル */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">🌐</span>
-                Web開発
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {webSkills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {skillGroups.map((group) => (
+            <Card key={group.title} className="h-full">
+              <CardHeader className="space-y-2">
+                <CardTitle className="flex items-center gap-2 text-xl">
+                  <span className="text-2xl" aria-hidden="true">{group.icon}</span>
+                  {group.title}
+                </CardTitle>
+                <p className="text-sm leading-6 text-muted-foreground">{group.description}</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="divide-y divide-border/70">
+                  {group.skills.map((skill) => (
+                    <li key={skill.name} className="py-3 first:pt-0 last:pb-0">
+                      <p className="font-medium">{skill.name}</p>
+                      <p className="mt-1 text-sm leading-6 text-muted-foreground">{skill.use}</p>
+                    </li>
+                  ))}
+                </ul>
+                {group.title === "デザイン・3DCG" && (
+                  <div className="mt-5 rounded-lg bg-muted/50 p-3">
+                    <p className="mb-3 text-sm font-medium">映像作品</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      <a href="https://youtu.be/wSsrHT7VnbY" target="_blank" rel="noopener noreferrer" aria-label="ASYMMETRYの映像を見る" className="group block overflow-hidden rounded-md border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        <Image src="/asymmetry-poster.jpg" alt="ASYMMETRY ポスター" width={320} height={240} className="aspect-[4/3] w-full object-cover transition-opacity group-hover:opacity-80" />
+                      </a>
+                      <a href="https://youtu.be/E7KNv9_7j5Y" target="_blank" rel="noopener noreferrer" aria-label="3Dアニメーション作品を見る" className="group block overflow-hidden rounded-md border focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                        <Image src="/romance-nakagawa.jpg" alt="3Dアニメーション作品" width={320} height={240} className="aspect-[4/3] w-full object-cover transition-opacity group-hover:opacity-80" />
+                      </a>
+                    </div>
                   </div>
-                  <Progress value={skill.level} aria-label={`${skill.name} ${skill.level}%`} indicatorClassName="!bg-[#D5545D]" />
-                  <p className="text-sm leading-6 text-muted-foreground">{skill.description}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+                )}
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-          {/* 3DCG制作 */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">🎨</span>
-                3DCG制作
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {threeDSkills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                  </div>
-                  <Progress value={skill.level} aria-label={`${skill.name} ${skill.level}%`} indicatorClassName="!bg-[#D5545D]" />
-                  <p className="text-sm leading-6 text-muted-foreground">{skill.description}</p>
-                </div>
-              ))}
-
-              <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-                <h4 className="font-medium mb-2">作品展示スペース</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  <a
-                    href="https://youtu.be/wSsrHT7VnbY"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
-                  >
-                    <Image
-                      src="/asymmetry-poster.jpg"
-                      alt="ASYMMETRY ポスター"
-                      width={320}
-                      height={320}
-                      className="h-full w-full object-cover"
-                    />
-                  </a>
-                  <a
-                    href="https://youtu.be/E7KNv9_7j5Y"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full aspect-square rounded border overflow-hidden hover:opacity-80 transition-opacity"
-                  >
-                    <Image
-                      src="/romance-nakagawa.jpg"
-                      alt="3Dアニメーション作品"
-                      width={320}
-                      height={320}
-                      className="h-full w-full object-cover"
-                    />
-                  </a>
+        <div className="mt-10 rounded-2xl border bg-card p-6 shadow-sm md:p-8">
+          <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
+            <h3 className="text-xl font-semibold">取得資格</h3>
+            <p className="text-sm text-muted-foreground">取得済みの資格のみを掲載</p>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {certifications.map((cert) => (
+              <div key={cert.name} className="flex flex-col justify-between gap-3 rounded-xl border p-4">
+                <p className="font-medium leading-6">{cert.name}</p>
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="secondary">{cert.category}</Badge>
+                  <span className="text-xs text-muted-foreground">{cert.year} 取得</span>
                 </div>
               </div>
-            </CardContent>
-          </Card>
-
-          {/* 資格 */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <span className="text-2xl">🏆</span>
-                資格・認定
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {certifications.map((cert) => (
-                <div key={cert.name} className="p-4 border rounded-lg">
-                  <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-medium">{cert.name}</h4>
-                    <Badge
-                      variant={
-                        cert.status === "取得済み" ? "default" : cert.status === "勉強中" ? "secondary" : cert.status === "試験結果待ち" ? "outline" : "destructive"
-                      }
-                    >
-                      {cert.status}
-                    </Badge>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{cert.year}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -6,19 +6,19 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tsubasa-okuma-portfolio.vercel.app"),
-  title: "奥間 翼 | Portfolio",
-  description: "Web開発と3DCG制作に取り組む奥間 翼のポートフォリオ。制作実績、技術スタック、経歴をご紹介します。",
+  title: "奥間 翼 | ITエンジニア・ポートフォリオ",
+  description: "奥間 翼のポートフォリオ。業務改善・自動化、Web・ECサイト開発、デザイン・3DCGの経験と制作物を紹介します。",
   openGraph: {
-    title: "奥間 翼 | Portfolio",
-    description: "Web開発と3DCG制作に取り組む奥間 翼のポートフォリオ。",
+    title: "奥間 翼 | ITエンジニア・ポートフォリオ",
+    description: "課題発見から仕組みづくりまで。業務改善、Web開発、個人制作の実績を紹介します。",
     type: "website",
     locale: "ja_JP",
     images: ["/portfolio-website-design.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "奥間 翼 | Portfolio",
-    description: "Web開発と3DCG制作に取り組む奥間 翼のポートフォリオ。",
+    title: "奥間 翼 | ITエンジニア・ポートフォリオ",
+    description: "業務改善・Web開発・個人制作の実績を紹介します。",
     images: ["/portfolio-website-design.webp"],
   },
 }
