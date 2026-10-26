@@ -21,7 +21,7 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mb-8 text-pretty text-base leading-8 text-muted-foreground md:text-lg">
-            知財業務の自動化、Web・ECサイトの開発・改善、3DCG制作を経験。
+            広告・知財業務の自動化、Web・ECサイトの開発・改善、3DCG制作を経験。
             利用者の目線と技術の両方から、現場の困りごとを解決するITエンジニアです。
           </p>
           <ul className="mb-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-foreground/80 md:justify-start">

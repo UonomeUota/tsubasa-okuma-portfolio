@@ -1,15 +1,23 @@
-import { ArrowRight, DatabaseZap, FileCheck2, ShoppingBag } from "lucide-react"
+import { ArrowRight, DatabaseZap, FileCheck2, ShoppingBag, Sparkles } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const experiences = [
   {
+    label: "広告・マーケティング",
+    title: "広告文の自動生成で営業提案を支援",
+    icon: Sparkles,
+    challenge: "EC商品の紹介文や広告文の制作には、繰り返しの入力・作成作業がありました。",
+    action: "PythonとOpenAI APIを使った自動生成プログラムを制作。提案活動を支え、契約受注に貢献しました。",
+    technologies: ["Python", "OpenAI API", "業務自動化"],
+  },
+  {
     label: "知財管理・業務改善",
     title: "知財管理データの移行を効率化",
     icon: DatabaseZap,
     challenge: "多数の知財案件がExcelで管理され、移行作業に手間がかかる状況でした。",
-    action: "約2,000件の管理データについて、マクロを使った特許管理ソフトへの移行を提案・実装しました。",
-    technologies: ["Excel", "マクロ", "業務フロー改善"],
+    action: "数千件規模の紙・Excel管理データを、Python等を用いて知財管理ソフトへ移行する工程を自動化しました。",
+    technologies: ["Python", "Excel", "業務フロー改善"],
   },
   {
     label: "知財管理・業務改善",
@@ -42,7 +50,7 @@ export function ExperienceSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {experiences.map((experience) => (
             <Card key={experience.title} className="flex h-full flex-col border-border/80 transition-shadow hover:shadow-lg">
               <CardHeader className="space-y-4">

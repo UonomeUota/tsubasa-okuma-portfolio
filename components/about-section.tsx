@@ -8,7 +8,7 @@ export function AboutSection() {
         <div className="mb-12 text-center md:mb-16">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">About me</p>
           <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">自己紹介</h2>
-          <p className="text-muted-foreground text-lg text-pretty">デザインの素養を土台に、行政・知財・ITの現場を経験してきました。</p>
+          <p className="text-muted-foreground text-lg text-pretty">デザインの素養を土台に、広告・知財・行政・ITの現場を経験してきました。</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -31,6 +31,13 @@ export function AboutSection() {
                         <p className="text-sm text-muted-foreground">インタラクション(3DCG/CAD プログラミング)専攻</p>
                       </div>
                       <Badge variant="secondary">2020-2025</Badge>
+                    </div>
+                    <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
+                      <div>
+                        <p className="font-medium">ソウルドアウト株式会社</p>
+                        <p className="text-sm text-muted-foreground">SEO・広告制作支援、Pythonによる自動化</p>
+                      </div>
+                      <Badge variant="secondary">2022.08–2023.10</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
@@ -68,7 +75,7 @@ export function AboutSection() {
                   <ul className="space-y-2 text-muted-foreground">
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                      Excel管理データの移行と定型業務の自動化
+                      Pythonを活用した広告・知財業務の自動化
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
@@ -96,7 +103,8 @@ export function AboutSection() {
                   <div className="p-4 bg-card rounded-lg border">
                     <h4 className="font-medium text-secondary mb-2">制作を一貫して手がける総合力</h4>
                     <p className="text-sm text-muted-foreground">
-                      特許事務所では、既存の管理フローを見直し、データ移行や文書作成の自動化を自ら提案・実装しました。
+                      広告業務では文章生成の自動化プログラムを制作して受注に貢献。
+                      特許事務所では、データ移行や文書作成の自動化を提案・実装しました。
                       目の前の作業をこなすだけでなく、仕組みそのものを改善することを大切にしています。
                     </p>
                   </div>

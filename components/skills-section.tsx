@@ -19,10 +19,10 @@ const skillGroups = [
     title: "業務改善・運用",
     description: "実務の課題解決に使ったスキル",
     skills: [
-      { name: "Excel / マクロ", use: "管理データの移行・定型業務の自動化" },
+      { name: "Python / OpenAI API", use: "広告文の生成・知財管理データの移行" },
+      { name: "Excel / マクロ", use: "管理データの整理・定型業務の自動化" },
       { name: "ECサイト / CMS", use: "既存サイトの改修・運用支援" },
       { name: "業務分析・要件整理", use: "課題の洗い出しと改善提案" },
-      { name: "情報セキュリティ", use: "基本的なリスク・対策の知識" },
     ],
   },
   {
@@ -41,8 +41,10 @@ const skillGroups = [
 const certifications = [
   { name: "応用情報技術者試験", year: "2025年", category: "IT" },
   { name: "情報セキュリティマネジメント試験", year: "2026年", category: "セキュリティ" },
-  { name: "基本情報技術者試験", year: "2021年", category: "IT" },
+  { name: "基本情報技術者試験", year: "2022年", category: "IT" },
   { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
+  { name: "日商簿記検定3級", year: "2025年", category: "会計" },
+  { name: "ITパスポート試験", year: "2021年", category: "IT" },
 ]
 
 export function SkillsSection() {
@@ -97,7 +99,7 @@ export function SkillsSection() {
             <h3 className="text-xl font-semibold">取得資格</h3>
             <p className="text-sm text-muted-foreground">取得済みの資格のみを掲載</p>
           </div>
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert) => (
               <div key={cert.name} className="flex flex-col justify-between gap-3 rounded-xl border p-4">
                 <p className="font-medium leading-6">{cert.name}</p>
