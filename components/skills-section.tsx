@@ -46,7 +46,7 @@ const certifications = [
   { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
   { name: "日商簿記検定3級", year: "2025年", category: "会計" },
   { name: "ITパスポート試験", year: "2021年", category: "IT" },
-  { name: "危険物取扱者 乙種第4類", year: "", category: "国家資格" },
+  { name: "危険物取扱者 乙種第4類", year: "2017年", category: "国家資格" },
   { name: "普通自動車第一種運転免許", year: "2021年", category: "運転免許" },
 ]
 
