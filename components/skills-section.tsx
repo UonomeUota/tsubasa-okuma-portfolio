@@ -46,6 +46,8 @@ const certifications = [
   { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
   { name: "日商簿記検定3級", year: "2025年", category: "会計" },
   { name: "ITパスポート試験", year: "2021年", category: "IT" },
+  { name: "危険物取扱者 乙種第4類", year: "", category: "国家資格" },
+  { name: "普通自動車第一種運転免許", year: "2021年", category: "運転免許" },
 ]
 
 export function SkillsSection() {
@@ -106,7 +108,7 @@ export function SkillsSection() {
                 <p className="font-medium leading-6">{cert.name}</p>
                 <div className="flex items-center justify-between gap-2">
                   <Badge variant="secondary">{cert.category}</Badge>
-                  <span className="text-xs text-muted-foreground">{cert.year} 取得</span>
+                  <span className="text-xs text-muted-foreground">{cert.year ? `${cert.year} 取得` : "取得済み"}</span>
                 </div>
               </div>
             ))}
