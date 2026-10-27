@@ -40,14 +40,14 @@ const skillGroups = [
 ]
 
 const certifications = [
-  { name: "応用情報技術者試験", year: "2025年", category: "IT" },
-  { name: "情報セキュリティマネジメント試験", year: "2026年", category: "セキュリティ" },
-  { name: "基本情報技術者試験", year: "2022年", category: "IT" },
-  { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
-  { name: "日商簿記検定3級", year: "2025年", category: "会計" },
-  { name: "ITパスポート試験", year: "2021年", category: "IT" },
   { name: "危険物取扱者 乙種第4類", year: "2017年", category: "国家資格" },
+  { name: "ITパスポート試験", year: "2021年", category: "IT" },
   { name: "普通自動車第一種運転免許", year: "2021年", category: "運転免許" },
+  { name: "基本情報技術者試験", year: "2022年", category: "IT" },
+  { name: "応用情報技術者試験", year: "2025年", category: "IT" },
+  { name: "日商簿記検定3級", year: "2025年", category: "会計" },
+  { name: "情報セキュリティマネジメント試験", year: "2026年", category: "セキュリティ" },
+  { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
 ]
 
 export function SkillsSection() {
