@@ -21,12 +21,12 @@ export function HeroSection() {
             </span>
           </h1>
           <p className="mb-8 text-pretty text-base leading-8 text-muted-foreground md:text-lg">
-            広告・知財業務の自動化、Web・ECサイトの開発・改善に加え、RustによるBIM/CADソフトも開発中。
-            利用者の目線と技術の両方から、現場の困りごとを解決するITエンジニアです。
+            広告・知財業務の自動化、Web・ECサイトの開発・改善を経験。
+            現在は研修動画システム開発のプロジェクトリーダーを担当し、RustによるBIM/CADソフトも個人開発しています。
           </p>
           <ul className="mb-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-foreground/80 md:justify-start">
             <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />業務改善を提案・実装</li>
-            <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />Web開発・ECサイト改修</li>
+            <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />Web開発・顧客折衝</li>
             <li className="flex items-center gap-1.5"><CheckCircle2 className="size-4 text-secondary" aria-hidden="true" />応用情報技術者</li>
           </ul>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

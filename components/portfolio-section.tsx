@@ -6,6 +6,7 @@ import { Clock3, ExternalLink, Github } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { BimShowcase } from "@/components/bim-showcase"
 
 type ProjectCategory = "web" | "3d" | "plugin" | "bim"
 
@@ -88,15 +89,6 @@ const projects: Project[] = [
     technologies: ["React", "TypeScript", "Tailwind CSS"],
     demoUrl: "https://v0-licaria.vercel.app/",
   },
-  {
-    id: 9,
-    title: "Tsugilith（ツギリス）— BIM/CAD",
-    category: "bim",
-    description: "将来のオープンソース公開を目指して個人開発中のデスクトップBIM/CAD。Rustを中核にQt/QMLでUIを構築し、壁・床・柱・梁・窓・ドアの配置、平面図・3D表示、数値編集、Undo/Redoなどを試作しています。実務完成版ではありません。",
-    image: "/tsugilith-architecture.svg",
-    technologies: ["Rust", "Qt / QML", "C++", "BIM / CAD"],
-    status: "開発中",
-  },
 ]
 
 const categories: Array<{ id: "all" | ProjectCategory; label: string }> = [
@@ -115,7 +107,7 @@ const categoryLabels: Record<ProjectCategory, string> = {
 }
 
 // 転職用の閲覧では、機能や課題設定が伝わるWebアプリを先に紹介します。
-const featuredOrder = [9, 2, 7, 8, 3, 6, 5, 1]
+const featuredOrder = [2, 7, 8, 3, 6, 5, 1]
 
 export function PortfolioSection() {
   const [selectedCategory, setSelectedCategory] = useState<"all" | ProjectCategory>("all")
@@ -152,6 +144,8 @@ export function PortfolioSection() {
             ))}
           </div>
         </div>
+
+        {(selectedCategory === "all" || selectedCategory === "bim") && <BimShowcase />}
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredProjects.map((project) => (

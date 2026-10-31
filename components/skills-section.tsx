@@ -19,10 +19,12 @@ const skillGroups = [
     title: "業務改善・運用",
     description: "実務の課題解決に使ったスキル",
     skills: [
-      { name: "Python / OpenAI API", use: "広告文の生成・知財管理データの移行" },
+      { name: "Python / OpenAI API", use: "広告文の生成・Pythonによる知財データ移行の自動化" },
       { name: "Excel / マクロ", use: "管理データの整理・定型業務の自動化" },
+      { name: "Google アナリティクス / Search Console", use: "広告データ分析・SEO改善" },
       { name: "W2 / Liquid / CMS", use: "Oki FemcareのECサイト改修・運用支援" },
       { name: "業務分析・要件整理", use: "課題の洗い出しと改善提案" },
+      { name: "進捗管理・顧客折衝", use: "研修動画システム開発のプロジェクトリーダー" },
     ],
   },
   {
@@ -30,6 +32,7 @@ const skillGroups = [
     title: "デザイン・3DCG・BIM",
     description: "デザイン学部での学びと自主制作・開発の経験",
     skills: [
+      { name: "Photoshop / Illustrator", use: "広告制作・画像加工・資料作成" },
       { name: "Blender", use: "モデリング・アニメーション" },
       { name: "Unreal Engine 5", use: "3Dシーン・映像表現" },
       { name: "Three.js", use: "Web上の3D表現" },
@@ -40,14 +43,14 @@ const skillGroups = [
 ]
 
 const certifications = [
-  { name: "危険物取扱者 乙種第4類", year: "2017年", category: "国家資格" },
-  { name: "ITパスポート試験", year: "2021年", category: "IT" },
-  { name: "普通自動車第一種運転免許", year: "2021年", category: "運転免許" },
-  { name: "基本情報技術者試験", year: "2022年", category: "IT" },
-  { name: "応用情報技術者試験", year: "2025年", category: "IT" },
-  { name: "日商簿記検定3級", year: "2025年", category: "会計" },
-  { name: "情報セキュリティマネジメント試験", year: "2026年", category: "セキュリティ" },
-  { name: "知的財産管理技能検定3級", year: "2026年", category: "知的財産" },
+  { name: "危険物取扱者 乙種第4類", date: "2018年6月", category: "国家資格" },
+  { name: "ITパスポート試験", date: "2021年2月", category: "IT" },
+  { name: "普通自動車第一種運転免許（AT限定）", date: "2021年5月", category: "運転免許" },
+  { name: "基本情報技術者試験", date: "2022年2月", category: "IT" },
+  { name: "日商簿記検定3級", date: "2025年5月", category: "会計" },
+  { name: "応用情報技術者試験", date: "2025年12月", category: "IT" },
+  { name: "知的財産管理技能検定3級", date: "2026年1月", category: "知的財産" },
+  { name: "情報セキュリティマネジメント試験", date: "2026年10月", category: "セキュリティ" },
 ]
 
 export function SkillsSection() {
@@ -57,7 +60,7 @@ export function SkillsSection() {
         <div className="mb-12 text-center md:mb-16">
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-secondary">Skills & certifications</p>
           <h2 className="mb-4 text-balance text-3xl font-bold md:text-4xl">技術・資格</h2>
-          <p className="text-pretty text-lg text-muted-foreground">数値による自己評価ではなく、使ってきた場面と合わせて紹介します。</p>
+          <p className="text-pretty text-lg text-muted-foreground">実務と制作で使ってきた技術を、活用した場面と合わせて紹介します。</p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -100,7 +103,7 @@ export function SkillsSection() {
         <div className="mt-10 rounded-2xl border bg-card p-6 shadow-sm md:p-8">
           <div className="mb-6 flex flex-wrap items-baseline justify-between gap-2">
             <h3 className="text-xl font-semibold">取得資格</h3>
-            <p className="text-sm text-muted-foreground">取得済みの資格のみを掲載</p>
+            <p className="text-sm text-muted-foreground">取得年月順に掲載</p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {certifications.map((cert) => (
@@ -108,7 +111,7 @@ export function SkillsSection() {
                 <p className="font-medium leading-6">{cert.name}</p>
                 <div className="flex items-center justify-between gap-2">
                   <Badge variant="secondary">{cert.category}</Badge>
-                  <span className="text-xs text-muted-foreground">{cert.year ? `${cert.year} 取得` : "取得済み"}</span>
+                  <span className="text-xs text-muted-foreground">{cert.date} 取得</span>
                 </div>
               </div>
             ))}

@@ -1,14 +1,30 @@
-import { ArrowRight, DatabaseZap, ExternalLink, FileCheck2, ShoppingBag, Sparkles } from "lucide-react"
+import { ArrowRight, DatabaseZap, ExternalLink, FileCheck2, Monitor, ShoppingBag, Sparkles, Users } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 const experiences = [
   {
+    label: "システム開発・プロジェクト管理",
+    title: "研修動画システム開発のプロジェクトリーダー",
+    icon: Users,
+    challenge: "株式会社キャリッジリターンで、外国人労働者向け研修動画システムの開発に参画しています。",
+    action: "プロジェクトリーダーとして、メンバーの進捗管理と顧客折衝を担当しています。",
+    technologies: ["プロジェクト管理", "進捗管理", "顧客折衝"],
+  },
+  {
+    label: "アプリ開発・システム保守",
+    title: "就活アプリ開発・財産管理システム保守",
+    icon: Monitor,
+    challenge: "株式会社キャリッジリターンで、業務目的の異なる複数のシステム開発・保守に携わりました。",
+    action: "大学生向け就活アプリの開発と、社内財産管理システムの保守を、それぞれのプロジェクトのメンバーとして担当しました。",
+    technologies: ["アプリ開発", "システム保守", "チーム開発"],
+  },
+  {
     label: "広告・マーケティング",
     title: "広告文の自動生成で営業提案を支援",
     icon: Sparkles,
     challenge: "EC商品の紹介文や広告文の制作には、繰り返しの入力・作成作業がありました。",
-    action: "PythonとOpenAI APIを使った自動生成プログラムを制作。提案活動を支え、契約受注に貢献しました。",
+    action: "PythonとOpenAI APIで商品説明文・広告文の自動生成プログラムを開発。提案が評価され、300万円規模の契約受注に貢献しました。",
     technologies: ["Python", "OpenAI API", "業務自動化"],
   },
   {
@@ -16,8 +32,8 @@ const experiences = [
     title: "知財管理データの移行を効率化",
     icon: DatabaseZap,
     challenge: "多数の知財案件がExcelで管理され、移行作業に手間がかかる状況でした。",
-    action: "約3,000件の紙・Excel管理データを、Python等を用いて知財管理ソフトへ移行する工程を自動化しました。",
-    technologies: ["Python", "Excel", "業務フロー改善"],
+    action: "紙・Excelで管理されていた約3,000件の知財データを、知財管理ソフト「root ip」へ移行。Pythonで移行工程を自動化し、工数削減と作業精度の向上に貢献しました。",
+    technologies: ["Python", "Excel", "root ip", "業務フロー改善"],
   },
   {
     label: "知財管理・業務改善",
@@ -65,7 +81,7 @@ export function ExperienceSection() {
               </CardHeader>
               <CardContent className="flex flex-1 flex-col gap-5">
                 <div className="space-y-2">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">課題</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">背景</p>
                   <p className="text-sm leading-7 text-foreground/90">{experience.challenge}</p>
                 </div>
                 <div className="space-y-2 rounded-lg bg-secondary/5 p-4">

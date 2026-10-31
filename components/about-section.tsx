@@ -44,21 +44,21 @@ export function AboutSection() {
                         <p className="font-medium">福島特許事務所</p>
                         <p className="text-sm text-muted-foreground">知財管理、先行技術調査、業務効率化・自動化</p>
                       </div>
-                      <Badge variant="secondary">2024.03–07</Badge>
+                      <Badge variant="secondary">2024.03–08</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
-                        <p className="font-medium">国税専門官　理工デジタル採用</p>
-                        <p className="text-sm text-muted-foreground">個人課税部門</p>
+                        <p className="font-medium">熊本国税局／熊本西税務署</p>
+                        <p className="text-sm text-muted-foreground">国税専門官（理工デジタル採用）・個人課税部門</p>
                       </div>
-                      <Badge variant="secondary">2025.04–2026.05</Badge>
+                      <Badge variant="secondary">2025.04–2026.04</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
                         <p className="font-medium">株式会社キャリッジリターン</p>
-                        <p className="text-sm text-muted-foreground">ITエンジニア／Webシステム開発</p>
+                        <p className="text-sm text-muted-foreground">ITエンジニア／研修動画システム開発のプロジェクトリーダー</p>
                       </div>
-                      <Badge variant="outline">2026.05–</Badge>
+                      <Badge variant="outline">2026.05–現在</Badge>
                     </div>
                     <div className="flex flex-col items-start justify-between gap-2 sm:flex-row">
                       <div>
@@ -80,6 +80,10 @@ export function AboutSection() {
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
                       TypeScript・React・Next.jsを用いたWeb制作
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 bg-secondary rounded-full"></span>
+                      開発プロジェクトの進捗管理・顧客折衝
                     </li>
                     <li className="flex items-center gap-2">
                       <span className="w-2 h-2 bg-secondary rounded-full"></span>
@@ -105,18 +109,18 @@ export function AboutSection() {
                 <h3 className="text-xl font-semibold mb-4">私の強み</h3>
                 <div className="space-y-4">
                   <div className="p-4 bg-card rounded-lg border">
-                    <h4 className="font-medium text-secondary mb-2">制作を一貫して手がける総合力</h4>
+                    <h4 className="font-medium text-secondary mb-2">業務の改善を形にする実装力</h4>
                     <p className="text-sm text-muted-foreground">
-                      広告業務では文章生成の自動化プログラムを制作して受注に貢献。
-                      特許事務所では、データ移行や文書作成の自動化を提案・実装しました。
-                      目の前の作業をこなすだけでなく、仕組みそのものを改善することを大切にしています。
+                      PythonとOpenAI APIによる広告文生成プログラムで、300万円規模の契約受注に貢献。
+                      特許事務所では、約3,000件の知財データをroot ipへ移行する工程を自動化しました。
+                      現場の作業を理解し、繰り返しの業務を仕組みで改善することを大切にしています。
                     </p>
                   </div>
                   <div className="p-4 bg-card rounded-lg border">
                     <h4 className="font-medium text-secondary mb-2">ITスキル × デザイン的発想</h4>
                     <p className="text-sm text-muted-foreground">
                       大学で学んだデザインや3DCGの知識を、Web制作にも応用しています。
-                      見た目だけでなく、情報が伝わりやすく、利用者が迷わない設計を重視します。
+                      情報が伝わりやすく、利用者が迷わない設計を重視します。
                     </p>
                   </div>
                   <div className="p-4 bg-card rounded-lg border">
@@ -127,9 +131,10 @@ export function AboutSection() {
                     </p>
                   </div>
                   <div className="p-4 bg-card rounded-lg border">
-                    <h4 className="font-medium text-secondary mb-2">問題解決能力</h4>
+                    <h4 className="font-medium text-secondary mb-2">開発を進めるための調整力</h4>
                     <p className="text-sm text-muted-foreground">
-                      業務担当者の困りごとを整理し、技術と運用の両面から実現可能な改善策を考えることが得意です。
+                      外国人労働者向け研修動画システムの開発で、プロジェクトリーダーを担当しています。
+                      メンバーの進捗管理と顧客折衝を通じて、関係者と認識を合わせながら開発を進めています。
                     </p>
                   </div>
                 </div>
